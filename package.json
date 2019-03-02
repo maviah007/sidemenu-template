@@ -6,6 +6,9 @@
     "start": "npx react-native run-android"
   },
   "dependencies": {
+    "appcenter": "1.12.2",
+    "appcenter-analytics": "1.12.2",
+    "appcenter-crashes": "1.12.2",
     "global": "^4.3.2",
     "prettier": "^1.15.3",
     "prop-types": "^15.6.2",
