@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 32,
     overflow: "hidden",
-    backgroundColor: "#fff"
+    backgroundColor: "#111"
   },
   subTitle: {
     height: 56,
