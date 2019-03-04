@@ -1,13 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   ScrollView,
   StyleSheet,
   Text,
   View,
   TouchableOpacity
-} from "react-native";
+} from 'react-native';
 import {
   bgDrawerHeader,
   drawerLogoColor,
@@ -15,9 +15,9 @@ import {
   bgDrawerInactiveItem,
   bgDrawerActiveItem,
   drawerHeaderColor
-} from "../global.styles";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { navigateTo } from "../Redux/actions";
+} from '../global.styles';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { navigateTo } from '../Redux/actions';
 
 const DrawerContent = ({ navigateTo, activeRoute, routes, closeDrawer }) => (
   <ScrollView>
@@ -48,15 +48,15 @@ const DrawerContent = ({ navigateTo, activeRoute, routes, closeDrawer }) => (
             <Icon
               name={route.icon}
               size={30}
-              color={activeRoute.name === route.name ? "#fff" : "#000"}
+              color={activeRoute.name === route.name ? '#fff' : '#000'}
             />
           </View>
         )}
         <Text
           style={
             activeRoute.name === route.name
-              ? { color: "#fff" }
-              : { color: "#000" }
+              ? { color: '#fff' }
+              : { color: '#000' }
           }
         >
           {route.name}
@@ -79,7 +79,7 @@ DrawerContent.propTypes = {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: "column",
+    flexDirection: 'column',
     paddingTop: 40, // 24dp (Space for the translucent StatusBar) plus 16dp Android Header paddingTop
     paddingLeft: 16,
     height: 170,
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
   headerLogo: {
     width: 64,
     height: 64,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 32,
-    overflow: "hidden",
-    backgroundColor: "#fff"
+    overflow: 'hidden',
+    backgroundColor: '#fff'
   },
   subTitle: {
     height: 56,
@@ -100,29 +100,27 @@ const styles = StyleSheet.create({
   },
   drawerTitle: {
     color: drawerHeaderColor,
-    fontFamily: "Roboto",
-    fontWeight: "500",
+    fontWeight: '500',
     fontSize: 14
   },
   drawerEmail: {
     color: drawerHeaderColor,
-    fontFamily: "Roboto",
-    fontWeight: "400",
+    fontWeight: '400',
     fontSize: 14
   },
   activeDrawerItem: {
     backgroundColor: bgDrawerActiveItem
   },
   drawerItem: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     backgroundColor: bgDrawerInactiveItem,
     color: drawerInactiveItemColor,
     height: 50,
     paddingLeft: 16,
     borderBottomWidth: 2,
-    borderBottomColor: "#fff"
+    borderBottomColor: '#fff'
   },
   drawerItemLogo: {
     paddingRight: 16
@@ -132,16 +130,16 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state, ownProps) => ({
   routes: state.routes.routes,
   activeRoute: state.routes.activeRoute,
-  closeDrawer: ownProps.closeDrawer,
+  closeDrawer: ownProps.closeDrawer
 });
 
 const mapDispatchToProps = dispatch => ({
   navigateTo: routeName => {
     dispatch(navigateTo(routeName));
-  },
+  }
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(DrawerContent);
